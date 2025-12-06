@@ -39,14 +39,14 @@ export const Commands: Command[] = [
     description: 'Returns your Discord User ID',
     embed: (_context: Context, body: DiscordInteraction, user: User) => ({
       title: 'Discord User ID',
-      description: `Your Discord User ID is \`${user.id}\`\n\nLanyard API URL\n[api.lanyard.rest/v1/users/${user.id}](https://api.lanyard.rest/v1/users/${user.id})`,
+      description: `Your Discord User ID is \`${user.id}\`\n\nLanyard API URL\n[lanyard.valerie.lol/v1/users/${user.id}](https://lanyard.valerie.lol/v1/users/${user.id})`,
       color: 0x272783,
     }),
   },
   {
     command: 'who',
     description: 'Returns your Lanyard/Discord user info',
-    post_channels: ['911712979291086919', '927757958010503171'],
+    post_channels: ['1376827198308352011', '1373020964865970217'],
     prehandler: async (context: Context, body: DiscordInteraction, user: User) => {
       const id = body.data.options?.find((item) => item.name == 'user')?.value || user.id;
       const lanyard = await fetchLanyardUser(id);
@@ -56,7 +56,7 @@ export const Commands: Command[] = [
         return {
           ...context,
           error: {
-            description: 'User is not in the Lanyard server\n\n[Join here](https://discord.gg/lanyard)',
+            description: 'User is not in the Lanyard server\n\n[Join here](https://discord.gg/Edmk3Fxncx)',
             footer: { text: 'discord.gg/lanyard' },
             color: 0x726311,
           },
@@ -113,7 +113,7 @@ export const Commands: Command[] = [
             },
             {
               name: '<:tag:915314938631835709> Lanyard API URL',
-              value: `[\`api.lanyard.rest/v1/users/${discord.id}\`](https://api.lanyard.rest/v1/users/${discord.id})`,
+              value: `[\`api.lanyard.rest/v1/users/${discord.id}\`](https://lanyard.valerie.lol/v1/users/${discord.id})`,
             },
             {
               name: '🔑 K/V Keys',
@@ -140,7 +140,7 @@ export const Commands: Command[] = [
   },
   {
     command: 'kv',
-    post_channels: ['911712979291086919', '927757958010503171'],
+    post_channels: ['1376827198308352011', '1373020964865970217'],
     description: 'Returns users Lanyard K/V pairs',
     embed: async (context: Context, body: DiscordInteraction, user: User) => {
       const id = body.data.options?.find((item) => item.name == 'user')?.value || user.id;
