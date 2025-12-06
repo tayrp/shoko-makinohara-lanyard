@@ -85,7 +85,7 @@ export const Commands: Command[] = [
           emoji: {
             id: '915314938631835709',
           },
-          url: `https://api.lanyard.rest/v1/users/${discord.id}`,
+          url: `https://lanyard.valerie.lol/v1/users/${discord.id}`,
         },
       ];
     },
@@ -113,7 +113,7 @@ export const Commands: Command[] = [
             },
             {
               name: '<:tag:915314938631835709> Lanyard API URL',
-              value: `[\`api.lanyard.rest/v1/users/${discord.id}\`](https://lanyard.valerie.lol/v1/users/${discord.id})`,
+              value: `[\`lanyard.valerie.lol/v1/users/${discord.id}\`](https://lanyard.valerie.lol/v1/users/${discord.id})`,
             },
             {
               name: '🔑 K/V Keys',
@@ -149,7 +149,7 @@ export const Commands: Command[] = [
         title: `Lanyard K/V for ${lanyard?.data?.discord_user.username}#${lanyard?.data?.discord_user.discriminator}`,
         description: `Current Lanyard K/V Items\n\n\`\`\`json\n${
           lanyard?.data?.kv ? JSON.stringify(lanyard.data.kv, null, 2) : '{}'
-        }\n\`\`\`\nTo access a key within a script, pull your Lanyard object [\`api.lanyard.rest/v1/users/${id}\`](https://api.lanyard.rest/v1/users/${id})\nand the json path is\`.data.kv.KEY_NAME\`\nwhen using the socket it will be \`.d.kv.KEY_NAME\`\nThe \`.\` referencing the root of your JSON response\n\nYou can set K/V items by reading the help with \`.kv\``,
+        }\n\`\`\`\nTo access a key within a script, pull your Lanyard object [\`lanyard.valerie.lol/v1/users/${id}\`](https://lanyard.valerie.lol/v1/users/${id})\nand the json path is\`.data.kv.KEY_NAME\`\nwhen using the socket it will be \`.d.kv.KEY_NAME\`\nThe \`.\` referencing the root of your JSON response\n\nYou can set K/V items by reading the help with \`.kv\``,
         color: 0xff9823,
       };
     },
